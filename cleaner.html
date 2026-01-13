@@ -1,0 +1,142 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GreenGrocer — Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-row">
+            <a class="brand" href="index.html"><div class="logo">GG</div>GreenGrocer</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions.html" class="active">Promotions</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	
+	<main class="container">
+    <div class="promo-banner" style="background: #e8f5e9; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px dashed #28a745; text-align: center;">
+        <h3 style="color: #28a745; margin: 0;">🔥 Limited Offer: Cleaning Special 🔥</h3>
+        <p style="margin: 5px 0 0;">Buy 2 of any <strong>Household</strong> cleaners to get <strong>10% OFF</strong> your overall bill!</p>
+    </div>
+
+    <h2>Household Promotions</h2>
+    <div class="grid" id="productGrid">
+			
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="products/softener.png" alt="Fabric Softener">
+            <h4>Fabric Softener 2L</h4>
+            <div class="price">RM 12.50</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="promo/A.png" alt="Detergent A">
+            <h4>Liquid Detergent A</h4>
+            <div class="price">RM 26.80</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="promo/B.png" alt="Detergent B">
+            <h4>Liquid Detergent B</h4>
+            <div class="price">RM 26.80</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="promo/lavender.png" alt="Lavender Cleaner">
+            <h4>Lavender Floor Cleaner</h4>
+            <div class="price">RM 13.90</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="promo/lemon.png" alt="Fabric Softener">
+            <h4>Lemon Dish Soap</h4>
+            <div class="price">RM 7.30</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="promo/spray.png" alt="Fabric Softener">
+            <h4>Multi-purpose Spray</h4>
+            <div class="price">RM 12.90</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="products/bleach.png" alt="Strong Bleach 1L">
+            <h4>Strong Bleach 1L</h4>
+            <div class="price">RM 8.70</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+		
+		<div class="card" data-category="household">
+			<span class="discount-badge">2 for 10%</span>
+            <img src="products/toilet.png" alt="Fabric Softener">
+            <h4>Power Toiler Cleaner</h4>
+            <div class="price">RM 8.40</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+    <footer>
+    <div class="container footer-content">
+        <div class="footer-column brand-col">
+            <div class="brand-row">
+                <div class="logo">GG</div>
+                <div>
+                    <span class="footer-brand-name">GreenGrocer</span><br>
+                    <small class="tagline">Affordable essentials • Discount prices</small>
+                </div>
+            </div>
+            <p class="footer-desc">
+                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+            </p>
+        </div>
+
+        <div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul class="footer-links">
+			<li><a href="products.html">Products</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<li><a href="stores.html">Our Stores</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>support@greengrocer.</p>
+            <p>+60 13-9114556</p>
+			<p>+60 11-59509882</p>
+			<p>+60 17-5639458</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

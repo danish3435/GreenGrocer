@@ -1,0 +1,175 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GreenGrocer — Promotions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-row">
+            <a class="brand" href="index.html"><div class="logo">GG</div>GreenGrocer</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions.html" class="active">Promotions</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="promo-banner" style="background: #e8f5e9; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px dashed #28a745; text-align: center;">
+            <h3 style="color: #28a745; margin: 0;">🔥 Weekend Super Saver 🔥</h3>
+            <p style="margin: 5px 0 0;">Massive Discounts on <strong>Pantry Items</strong> up to <strong>30% OFF!</strong></p>
+        </div>
+
+        <h2>Pantry Items Promotions</h2>
+        
+        <div class="grid" id="productGrid">
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="promo/basmati.png" alt="Rice">
+                <h4>Premium Basmati Rice 5kg</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 45.00</span><br>
+                    RM 31.50
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="products/oil 1L.png" alt="Oil">
+                <h4>Pure Sunflower Oil 5L</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 38.00</span><br>
+                    RM 26.60
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="products/spaghetti.png" alt="Pasta">
+                <h4>Organic Spaghetti 500g</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 6.50</span><br>
+                    RM 4.55
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="promo/tuna.png" alt="Tuna">
+                <h4>Canned Tuna in Brine</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 8.90</span><br>
+                    RM 6.23
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="products/flour.png" alt="Flour">
+                <h4>All-Purpose Flour 1kg</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 4.20</span><br>
+                    RM 2.94
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="products/sugar.png" alt="Honey">
+                <h4>White Sugar 1kg</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 2.95</span><br>
+                    RM 2.05
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="promo/oat.png" alt="Oats">
+                <h4>Quick Rolled Oats 800g</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 15.50</span><br>
+                    RM 10.85
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+			
+			<div class="card" data-category="groceries">
+                <span class="discount-badge">-30%</span>
+                <img src="promo/carbonara.png" alt="Oats">
+                <h4>Carbonara Sauce in Tin 280g</h4>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 15.00</span><br>
+                    RM 9
+                </div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    <div class="container footer-content">
+        <div class="footer-column brand-col">
+            <div class="brand-row">
+                <div class="logo">GG</div>
+                <div>
+                    <span class="footer-brand-name">GreenGrocer</span><br>
+                    <small class="tagline">Affordable essentials • Discount prices</small>
+                </div>
+            </div>
+            <p class="footer-desc">
+                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+            </p>
+        </div>
+
+        <div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul class="footer-links">
+			<li><a href="products.html">Products</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<li><a href="stores.html">Our Stores</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>support@greengrocer.</p>
+            <p>+60 13-9114556</p>
+			<p>+60 11-59509882</p>
+			<p>+60 17-5639458</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+    <script src="javascript.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenGrocer — Exclusive Promotions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header aria-label="Main header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <div class="logo">GG</div>
+        <div>
+          <div style="font-size:15px">GreenGrocer</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Discount essentials</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="promotions.html" class="active">Promotions</a></li>
+          <li><a href="stores.html">Stores</a></li>
+		  <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section style="padding: 40px 0;">
+      <span class="kicker">Limited Time Offers</span>
+      <h1 style="margin-top:10px;">Current Promotions</h1>
+      <p class="muted">Save even more on your daily essentials with our weekly deals and bundle offers.</p>
+
+      <div style="display:grid; grid-template-columns: 1fr; gap: 24px; margin-top: 30px;">
+        
+        <div class="card" style="display:grid; grid-template-columns: 1fr 200px; align-items:center;">
+			<div>
+				<div class="tag">30% OFF</div>
+				<div class="promo-inner">
+				<h3>Weekend Super Saver</h3>
+				<p class="muted">Enjoy massive discounts on selected pantry items including rice, sugar, and cooking oil. Valid every Friday to Sunday.</p>
+				<a href="pantry.html" class="promo-btn">Shop Pantry Deals</a>
+				</div>
+			</div>
+			<img src="promo/pantry.png" alt="Pantry Sale" style="border-radius:12px; margin-right:24px;">
+		</div>
+
+        <div class="card" style="display:grid; grid-template-columns: 1fr 200px; align-items:center;">
+          <div>
+			  <div class="tag">BUY 2 SAVE MORE</div>
+			  <div class="promo-inner">
+              <h3>Cleaning Supplies Bundle</h3>
+              <p class="muted">Buy any 2 cleaning detergents or floor cleaners and get an additional 10% off your total bill.</p>
+              <a href="cleaner.html" class="promo-btn">View Bundle</a>
+              </div>
+		  </div>
+          <img src="promo/cleaning.png" alt="Cleaning Bundle" style="border-radius:12px; margin-right:24px;">
+        </div>
+
+	    <div class="card" style="display:grid; grid-template-columns: 1fr 200px; align-items:center;">
+          <div>
+			  <div class="tag">40% OFF</div>
+			  <div class="promo-inner">
+              <h3>Student Essentials Pack</h3>
+              <p class="muted">Specially curated bundles for students. Includes instant noodles, snacks, and personal care items at student-friendly prices.</p>
+              <a href="student.html" class="promo-btn">Explore Packs</a>
+              </div>
+	      </div>
+          <img src="promo/student.png" alt="Student Deals" style="border-radius:12px; margin-right:24px;">
+          </div>
+		  
+       </div>
+	  
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+        <div class="footer-column brand-col">
+            <div class="brand-row">
+                <div class="logo">GG</div>
+                <div>
+                    <span class="footer-brand-name">GreenGrocer</span><br>
+                    <small class="tagline">Affordable essentials • Discount prices</small>
+                </div>
+            </div>
+            <p class="footer-desc">
+                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+            </p>
+        </div>
+
+        <div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul class="footer-links">
+			<li><a href="products.html">Products</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<li><a href="stores.html">Our Stores</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>support@greengrocer.</p>
+            <p>+60 13-9114556</p>
+			<p>+60 11-59509882</p>
+			<p>+60 17-5639458</p>
+        </div>
+    </div>
+
+		<div class="footer-bottom">
+			<div class="container">
+				© <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+			</div>
+		</div>
+	</footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>

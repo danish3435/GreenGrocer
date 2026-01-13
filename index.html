@@ -1,0 +1,131 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GreenGrocer — Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header aria-label="Main header">
+        <div class="container nav-row">
+            <a class="brand" href="index.html">
+                <div class="logo">GG</div>
+                <div>
+                    <div style="font-size:15px">GreenGrocer</div>
+                    <div style="font-size:12px;color:var(--muted);margin-top:2px">Discount essentials</div>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions.html">Promotions</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div id="mobileMenu" class="mobile-menu-overlay">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="promotions.html">Promotions</a>
+            <a href="stores.html">Stores</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop now.html" class="cta-mobile">Shop Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="kicker">Save More • Shop Smart</span>
+                    <h1>Fresh Essentials at <span class="highlight">Unbeatable Prices</span></h1>
+                    <p>Your neighborhood discount grocer. Quality daily supplies for your family without the premium price tag.</p>
+                    <div class="hero-btns">
+                        <a href="products.html" class="cta-outline">Browse Groceries</a>
+                        <a href="promotions.html" class="cta-outline">View Promotions</a>
+						<a href="about.html" class="cta-primary"><strong>➞ Learn about GreenGrocer</strong></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="Fresh Vegetables and Groceries">
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-bottom: 60px;">
+			<div class="carousel">
+			<button class="carousel-prev" id="prevBtn">❮</button>
+			<button class="carousel-next" id="nextBtn">❯</button>
+
+			<div class="slides" id="slides">
+            <div class="slide bg-pantry">
+                <h3>Weekend Super Saver</h3>
+                <p>Pantry items up to 30% off!</p>
+                <a href="pantry.html" class="promo-btn">Shop Pantry Deals</a>
+            </div>
+            <div class="slide bg-cleaning">
+                <h3>Clean & Save</h3>
+                <p>Buy 2 cleaning supplies, save extra 10%</p>
+                <a href="cleaner.html" class="promo-btn">View Bundle</a>
+            </div>
+            <div class="slide bg-student">
+                <h3>Student Life</h3>
+                <p>Exclusive 40% off bundle packs</p>
+                <a href="student.html" class="promo-btn">Explore Packs</a>
+            </div>
+			</div>
+			<div class="dots" id="dots"></div>
+			</div>
+		</section>
+		
+    </main>
+	
+   <footer>
+    <div class="container footer-content">
+        <div class="footer-column brand-col">
+            <div class="brand-row">
+                <div class="logo">GG</div>
+                <div>
+                    <span class="footer-brand-name">GreenGrocer</span><br>
+                    <small class="tagline">Affordable essentials • Discount prices</small>
+                </div>
+            </div>
+            <p class="footer-desc">
+                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+            </p>
+        </div>
+
+        <div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul class="footer-links">
+			<li><a href="products.html">Products</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<li><a href="stores.html">Our Stores</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>support@greengrocer.</p>
+            <p>+60 13-9114556</p>
+			<p>+60 11-59509882</p>
+			<p>+60 17-5639458</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+    <script src="javascript.js"></script>
+</body>
+</html>

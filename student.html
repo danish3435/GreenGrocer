@@ -1,0 +1,124 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GreenGrocer — Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-row">
+            <a class="brand" href="index.html"><div class="logo">GG</div>GreenGrocer</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="promotions.html" class="active">Promotions</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	
+	<main class="container">
+    <div class="promo-banner" style="background: #e8f5e9; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px dashed #28a745; text-align: center;">
+        <h3 style="color: #28a745; margin: 0;">🔥 Student Discounts 🔥</h3>
+        <p style="margin: 5px 0 0;">Curated Bundle for <strong>Students Only</strong> capped at<strong> 40% OFF!</strong>
+    </div>
+
+    <h2>Student Bundle Promotions</h2>
+    <div class="grid" id="productGrid">
+        
+		<div class="card" data-category="groceries">
+            <span class="discount-badge">-40%</span>
+            <img src="promo/dorm.png" alt="Dorm Starter">
+            <h4>The Dorm Starter Pack</h4>
+            <small style="display:block; margin-bottom: 10px; color: #666;">Includes: Instant Noodles (5pk), 3-in-1 Coffee, and Digestive Biscuits</small>
+            <div class="price">
+                <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 25.00</span><br>
+                RM 15.00
+            </div>
+            <div class="qty-container">
+                <input type="number" class="qty-input" value="1" min="1">
+            </div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="card" data-category="groceries">
+            <span class="discount-badge">-40%</span>
+            <img src="promo/exam.png" alt="Exam Survival">
+            <h4>Exam Survival Kit</h4>
+            <small style="display:block; margin-bottom: 10px; color: #666;">Includes: Energy Drink (2 cans), Dark Chocolate, and Mixed Nuts</small>
+            <div class="price">
+                <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 32.00</span><br>
+                RM 19.20
+            </div>
+            <div class="qty-container">
+                <input type="number" class="qty-input" value="1" min="1">
+            </div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="card" data-category="household">
+            <span class="discount-badge">-40%</span>
+            <img src="promo/clean.png" alt="Clean Campus">
+            <h4>Campus Clean Bundle</h4>
+            <small style="display:block; margin-bottom: 10px; color: #666;">Includes: Laundry Pods (10s), Dish Soap, and Microfiber Cloth</small>
+            <div class="price">
+                <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">RM 40.00</span><br>
+                RM 24.00
+            </div>
+            <div class="qty-container">
+                <input type="number" class="qty-input" value="1" min="1">
+            </div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+    </div>
+	
+	<footer>
+    <div class="container footer-content">
+        <div class="footer-column brand-col">
+            <div class="brand-row">
+                <div class="logo">GG</div>
+                <div>
+                    <span class="footer-brand-name">GreenGrocer</span><br>
+                    <small class="tagline">Affordable essentials • Discount prices</small>
+                </div>
+            </div>
+            <p class="footer-desc">
+                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+            </p>
+        </div>
+
+        <div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul class="footer-links">
+			<li><a href="products.html">Products</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<li><a href="stores.html">Our Stores</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>support@greengrocer.</p>
+            <p>+60 13-9114556</p>
+			<p>+60 11-59509882</p>
+			<p>+60 17-5639458</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

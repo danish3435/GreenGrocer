@@ -1,0 +1,417 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GreenGrocer — Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header aria-label="Main header">
+        <div class="container nav-row">
+            <a class="brand" href="index.html">
+                <div class="logo">GG</div>
+                <div>
+                    <div style="font-size:15px">GreenGrocer</div>
+                    <div style="font-size:12px;color:var(--muted);margin-top:2px">Discount essentials</div>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="promotions.html">Promotions</a></li>
+                    <li><a href="stores.html">Stores</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for rice, milk, soap...">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div class="filter-box">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="household">Household</option>
+                        <option value="personal">Personal Care</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <h2 id="sectionTitle">Our Products</h2>
+        
+        <div class="grid">
+           
+		   <div class="card" data-category="groceries">
+                <img src="products/rice 5kg.png" alt="Rice">
+                <h4>White Rice 5kg</h4>
+                <div class="price">RM 23.90</div>
+                <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/oil 1L.png" alt="Oil">
+				<h4>Cooking Oil 1L</h4>
+				<div class="price">RM 7.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/eggs.png" alt="Eggs">
+				<h4>Organic Eggs 10s</h4>
+				<div class="price">RM 6.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/bread.png" alt="Bread">
+				<h4>Whole Wheat Bread</h4>
+				<div class="price">RM 3.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+				</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/milk.png" alt="Milk">
+				<h4>Fresh Milk 1L</h4>
+				<div class="price">RM 6.80</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/apples.png" alt="Apples">
+				<h4>Red Apples 1kg</h4>
+				<div class="price">RM 8.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/banana.png" alt="Bananas">
+				<h4>Cavendish Bananas</h4>
+				<div class="price">RM 4.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/carrots.png" alt="Carrots">
+				<h4>Australian Carrots</h4>
+				<div class="price">RM 3.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/potatoes.png" alt="Potato">
+				<h4>Russet Potatoes 2kg</h4>
+				<div class="price">RM 7.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/onions.png" alt="Onion">
+				<h4>Red Onions 1kg</h4>
+				<div class="price">RM 4.00</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/spaghetti.png" alt="Pasta">
+				<h4>Spaghetti 500g</h4>
+				<div class="price">RM 4.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/coffee.png" alt="Coffee">
+				<h4>Instant Coffee 200g</h4>
+				<div class="price">RM 14.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/sugar.png" alt="Sugar">
+				<h4>Fine Sugar 1kg</h4>
+				<div class="price">RM 2.85</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/flour.png" alt="Flour">
+				<h4>Wheat Flour 1kg</h4>
+				<div class="price">RM 3.30</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="groceries">
+				<img src="products/table-salt.png" alt="Salt">
+				<h4>Table Salt 500g</h4>
+				<div class="price">RM 1.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+
+            <div class="card" data-category="household">
+				<img src="products/detergent.png" alt="Detergent">
+				<h4>Liquid Detergent 3L</h4>
+				<div class="price">RM 22.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/softener.png" alt="Softener">
+				<h4>Fabric Softener</h4>
+				<div class="price">RM 12.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/dish.png" alt="DishSoap">
+				<h4>Dish Soap 900ml</h4>
+				<div class="price">RM 5.80</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/bleach.png" alt="Bleach">
+				<h4>Laundry Bleach 1L</h4>
+				<div class="price">RM 4.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/floor.png" alt="Floor">
+				<h4>Floor Cleaner 2L</h4>
+				<div class="price">RM 11.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/glass.png" alt="Glass">
+				<h4>Glass Cleaner Spray</h4>
+				<div class="price">RM 7.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/toilet.png" alt="Toilet">
+				<h4>Toilet Bowl Cleaner</h4>
+				<div class="price">RM 8.40</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/tissue.png" alt="Tissue">
+				<h4>Facial Tissue 3ply</h4>
+				<div class="price">RM 13.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/kitchen.png" alt="Kitchen">
+				<h4>Kitchen Towel 2s</h4>
+				<div class="price">RM 6.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/garbage.png" alt="Garbage">
+				<h4>Garbage Bags (L)</h4>
+				<div class="price">RM 4.80</div><div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/sponge.png" alt="Sponge">
+				<h4>Scrub Sponges 3s</h4>
+				<div class="price">RM 3.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/gloves.png" alt="Gloves"><h4>Rubber Gloves</h4>
+				<div class="price">RM 5.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/aluminum.png" alt="Foil">
+				<h4>Aluminium Foil</h4>
+				<div class="price">RM 9.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/cling.png" alt="Wrap">
+				<h4>Cling Wrap 30m</h4>
+				<div class="price">RM 6.80</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="household">
+				<img src="products/lightbulb.png" alt="Bulb">
+				<h4>LED Lightbulb 9W</h4>
+				<div class="price">RM 10.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+
+            <div class="card" data-category="personal">
+				<img src="products/shampoo.png" alt="Shampoo">
+				<h4>Hair Shampoo 400ml</h4>
+				<div class="price">RM 16.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/conditioner.png" alt="Conditioner">
+				<h4>Hair Conditioner</h4>
+				<div class="price">RM 17.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/body wash.png" alt="BodyWash">
+				<h4>Body Wash 1L</h4>
+				<div class="price">RM 19.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/antiseptic-soap.png" alt="SoapBar">
+				<h4>Antiseptic Soap 3s</h4>
+				<div class="price">RM 7.80</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/toothpaste.png" alt="Toothpaste">
+				<h4>Toothpaste 2s</h4>
+				<div class="price">RM 11.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/toothbrush.png" alt="Brush">
+				<h4>Soft Toothbrush 3s</h4>
+				<div class="price">RM 9.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/mouthwash.png" alt="Mouthwash">
+				<h4>Mouthwash 500ml</h4>
+				<div class="price">RM 14.20</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/sanitizer.png" alt="Sanitizer">
+				<h4>Hand Sanitizer</h4>
+				<div class="price">RM 4.90</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/deodorant.png" alt="Deodorant">
+				<h4>Roll-on Deodorant</h4>
+				<div class="price">RM 8.50</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+			
+            <div class="card" data-category="personal">
+				<img src="products/lotion.png" alt="Lotion">
+				<h4>Body Lotion 250ml</h4>
+				<div class="price">RM 13.80</div>
+				<div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
+				<button class="add-btn">Add to Cart</button>
+			</div>
+        </div>
+		
+    </main>
+
+    <footer>
+    <div class="container footer-content">
+        <div class="footer-column brand-col">
+            <div class="brand-row">
+                <div class="logo">GG</div>
+                <div>
+                    <span class="footer-brand-name">GreenGrocer</span><br>
+                    <small class="tagline">Affordable essentials • Discount prices</small>
+                </div>
+            </div>
+            <p class="footer-desc">
+                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+            </p>
+        </div>
+
+        <div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul class="footer-links">
+			<li><a href="products.html">Products</a></li>
+			<li><a href="promotions.html">Promotions</a></li>
+			<li><a href="stores.html">Our Stores</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>support@greengrocer.</p>
+            <p>+60 13-9114556</p>
+			<p>+60 11-59509882</p>
+			<p>+60 17-5639458</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+    <script src="javascript.js"></script>
+</body>
+</html>
