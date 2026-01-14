@@ -184,27 +184,25 @@ nav a.active::after {
     border-radius: 8px;
 }
 
-/* --- HAMBURGER MENU VISIBILITY --- */
 .menu-trigger {
-    display: none; /* Hidden on desktop */
+    display: none; 
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    z-index: 1100; /* Ensures it stays above everything */
+    z-index: 1100; 
 }
 
 .menu-trigger span {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--brand-green); /* Makes the bars visible */
+    background-color: var(--brand-green); 
     border-radius: 3px;
     transition: 0.3s ease;
 }
 
-/* Mobile Menu Overlay Styles */
 .mobile-menu-overlay {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     top: 70px;
     left: 0;
@@ -225,7 +223,6 @@ nav a.active::after {
     border-bottom: 1px solid #f0f0f0;
 }
 
-/* Show Hamburger on Mobile */
 @media (max-width: 768px) {
     .menu-trigger {
         display: flex;
@@ -438,7 +435,6 @@ nav a.active::after {
     border: none; padding: 0 25px; cursor: pointer; 
 }
 
-/* --- PRODUCT GRID --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -492,8 +488,6 @@ nav a.active::after {
     position: relative; /* Necessary to position the badge */
 }
 
-
-/* --- BUTTONS & QUANTITY --- */
 .add-btn, .send-btn {
     background: var(--brand-green);
     color: white;
@@ -517,7 +511,6 @@ nav a.active::after {
     margin-bottom: 15px;
 }
 
-/* --- CART BADGE --- */
 #cart-count, #cart-count-mobile {
     background-color: #ff4757;
     color: white;
@@ -537,29 +530,26 @@ nav a.active::after {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* --- PROMOTIONS PAGE SPECIFIC DESIGN --- */
 .card {
-    overflow: hidden; /* Ensures the yellow banner fits perfectly at the top corners */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 0 !important; /* We will use internal padding for content instead */
+    padding: 0 !important; 
 }
 
-/* The Yellow Banner at the top of each promo card */
 .tag {
-    width: 100%; /* Spans the full width of the card */
-    background: #ffd166 !important; /* Matches --accent-yellow */
+    width: 100%; 
+    background: #ffd166 !important; 
     color: white;
     text-align: center;
     padding: 8px 0;
     font-weight: 800;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
-    border-radius: 0; /* Flat against the card top */
+    border-radius: 0; 
     margin-bottom: 0;
 }
 
-/* Container for the text content within the card */
 .promo-inner {
     padding: 24px;
     text-align: center;
@@ -573,17 +563,15 @@ nav a.active::after {
     color: #1a2b3c;
 }
 
-/* THE WIDER PILL BUTTON DESIGN */
 .promo-btn {
     display: inline-block;
     background-color: var(--brand-green);
     color: white !important;
     text-decoration: none;
     
-    /* Increased horizontal padding (35px) for the 'wider' look you requested */
     padding: 10px 35px; 
     
-    border-radius: 25px; /* Pill design */
+    border-radius: 25px;
     font-weight: 700;
     font-size: 0.9rem;
     transition: all 0.3s ease;
@@ -614,18 +602,17 @@ nav a.active::after {
     margin-bottom: 30px;
 }
 
-/* Specific styling for store cards to override general product card styles */
 .card.store-card {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
     padding: 24px;
-    cursor: default; /* Not a product, so change cursor */
+    cursor: default;     
 }
 
 .card.store-card:hover {
-    transform: translateY(-5px); /* Lift up rather than scale up */
+    transform: translateY(-5px); 
 }
 
 .store-info {
@@ -646,7 +633,6 @@ nav a.active::after {
     color: var(--brand-green);
 }
 
-/* Status Badges (Open/Closed) */
 .status-badge {
     display: inline-block;
     padding: 4px 10px;
@@ -691,7 +677,7 @@ nav a.active::after {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* --- ABOUT PAGE STATS & BRANCHES --- */
+/* --- ABOUT US --- */
 .stats-section {
     background: var(--brand-green);
     color: white;
@@ -744,7 +730,6 @@ nav a.active::after {
     .stats-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* Ensures the about grid splits correctly on desktop and stacks on mobile */
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -752,17 +737,15 @@ nav a.active::after {
     align-items: center;
 }
 
-/* Image scaling fix */
 .responsive-about-img {
     width: 100%;
-    height: auto; /* Maintains aspect ratio */
-    max-height: 500px; /* Limits size on large screens */
-    object-fit: cover; /* Crops nicely if needed */
+    height: auto; /
+    max-height: 500px; 
+    object-fit: cover; 
     border-radius: var(--radius);
     box-shadow: var(--card-shadow);
 }
 
-/* Branch Pill Enhancements */
 .branches-container {
     display: flex;
     flex-wrap: wrap;
@@ -787,7 +770,6 @@ nav a.active::after {
     transform: translateY(-3px);
 }
 
-/* Stats Styling */
 .stats-section {
     background: var(--brand-green);
     color: white;
@@ -807,7 +789,7 @@ nav a.active::after {
         text-align: center;
     }
     .about-image {
-        order: -1; /* Puts image above text on mobile */
+        order: -1; 
     }
 }
 
@@ -852,7 +834,6 @@ nav a.active::after {
 
 .send-btn { border: none; padding: 15px; font-size: 1rem; cursor: pointer; }
 
-/* --- NOTIFICATION TOAST --- */
 .toast {
     position: fixed;
     bottom: 30px;
@@ -992,7 +973,6 @@ footer {
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-    /* Hide desktop nav, show hamburger */
     .nav-links {
         display: none;
     }
@@ -1001,7 +981,6 @@ footer {
         display: flex;
     }
     
-    /* Hero Section */
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1020,7 +999,6 @@ footer {
         margin-bottom: 20px;
     }
     
-    /* Carousel */
     .slide h3 {
         font-size: 1.8rem;
     }
@@ -1033,13 +1011,11 @@ footer {
         padding: 40px 20px;
     }
     
-    /* Product Grid */
     .grid {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 15px;
     }
     
-    /* Footer */
     .footer-content {
         grid-template-columns: 1fr !important;
         text-align: center;
@@ -1083,7 +1059,7 @@ footer {
     }
 }
 
-/* Print styles to show only the receipt when the user clicks 'Print' */
+/* Print Styles */
 @media print {
     header, footer, .add-btn, section {
         display: none !important;
@@ -1154,7 +1130,6 @@ footer {
     font-weight: 600;
 }
 
-/* --- PRINT OPTIMIZATION --- */
 @media print {
     body { background: white; }
     header, footer, .receipt-actions, #cartContent, .no-print, section {
