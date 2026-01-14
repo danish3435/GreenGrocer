@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- ELEMENT SELECTIONS ---
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
     const categoryFilter = document.getElementById('categoryFilter');
@@ -10,20 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const grandTotalEl = document.getElementById('grandTotal');
     const payBtn = document.getElementById('payBtn');
 
-    // --- HAMBURGER MENU TOGGLE ---
     const trigger = document.getElementById('menuTrigger');
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (trigger && mobileMenu) {
         trigger.addEventListener('click', () => {
-            // Toggle the hamburger animation
+           
             trigger.classList.toggle('active');
-            
-            // Toggle the mobile menu visibility
+        
             mobileMenu.classList.toggle('show');
         });
 
-        // Close menu when clicking on a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -32,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!trigger.contains(e.target) && !mobileMenu.contains(e.target)) {
                 trigger.classList.remove('active');
@@ -41,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CAROUSEL LOGIC ---
     const slides = document.getElementById('slides');
     const dotsContainer = document.getElementById('dots');
     const prevBtn = document.getElementById('prevBtn');
@@ -53,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoPlayInterval;
 
     if (slides && dotsContainer && slideCount > 0) {
-        // Create dots
         allSlides.forEach((_, i) => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
@@ -85,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             goToSlide(currentIndex);
         };
 
-        // Button Listeners
         if (nextBtn) nextBtn.addEventListener('click', () => {
             stopAutoPlay();
             moveNext();
@@ -98,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoPlay();
         });
 
-        // Auto-play Logic
         const startAutoPlay = () => {
             autoPlayInterval = setInterval(moveNext, 5000);
         };
@@ -107,13 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startAutoPlay();
 
-        // Pause on hover
         if (slides.parentElement) {
             slides.parentElement.addEventListener('mouseenter', stopAutoPlay);
             slides.parentElement.addEventListener('mouseleave', startAutoPlay);
         }
 
-        // Touch swipe support for mobile
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -128,13 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const handleSwipe = () => {
             if (touchEndX < touchStartX - 50) {
-                // Swipe left
                 stopAutoPlay();
                 moveNext();
                 startAutoPlay();
             }
             if (touchEndX > touchStartX + 50) {
-                // Swipe right
                 stopAutoPlay();
                 movePrev();
                 startAutoPlay();
@@ -142,10 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
     
-    // INITIALIZE BADGE ON PAGE LOAD
     updateCartBadge();
 
-    // --- SEARCH & FILTER LOGIC ---
     function filterProducts() {
         if (!searchInput || !categoryFilter) return; 
 
@@ -167,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBtn) searchBtn.addEventListener('click', filterProducts);
     if (categoryFilter) categoryFilter.addEventListener('change', filterProducts);
 
-    // --- COUNTING ANIMATION ---
     const counters = document.querySelectorAll('.counter');
     
     const runCounter = (el) => {
@@ -189,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
         update();
     };
 
-    // Intersection Observer to trigger when visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -201,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     counters.forEach(c => observer.observe(c));
 
-    // --- ADD TO CART LOGIC ---
     const allAddBtns = document.querySelectorAll('.add-btn');
     allAddBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -233,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- RENDER CART ---
     if (cartItemsList) { renderCart(); }
 
     function renderCart() {
@@ -290,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (grandTotalEl) grandTotalEl.textContent = `RM ${(subtotal - discount).toFixed(2)}`;
     }
 
-    // --- PLUS/MINUS QUANTITY CONTROL ---
     window.changeQty = function(index, delta) {
         let cart = JSON.parse(localStorage.getItem('gg_cart')) || [];
         cart[index].quantity += delta;
@@ -314,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- CONTACT FORM LOGIC ---
     const contactForm = document.getElementById('contactForm');
     const toast = document.getElementById('toast');
     if (contactForm) {
@@ -340,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- PAYMENT & RECEIPT ---
     if (payBtn) {
         payBtn.addEventListener('click', () => {
             const cart = JSON.parse(localStorage.getItem('gg_cart')) || [];
@@ -349,8 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isDelivery = confirm("📦 Order Preference:\n\nClick OK for Delivery (+RM 5.00)\nClick Cancel for Pickup (Free)");
             const deliveryFee = isDelivery ? 5.0 : 0.0;
             const method = isDelivery ? "Home Delivery" : "Store Pickup";
-            
-            // Update receipt items
+
             const receiptItems = document.getElementById('receiptItems');
             if (receiptItems) {
                 receiptItems.innerHTML = '';
@@ -366,13 +343,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Update receipt details
             document.getElementById('receiptRef').textContent = "GG-" + Math.floor(1000 + Math.random() * 9000);
             document.getElementById('receiptMethod').textContent = method;
             const currentTotal = parseFloat(grandTotalEl.textContent.replace('RM ', ''));
             document.getElementById('receiptTotal').textContent = `RM ${(currentTotal + deliveryFee).toFixed(2)}`;
             
-            // Show receipt
             document.getElementById('cartContent').style.display = 'none';
             document.getElementById('receiptSection').style.display = 'block';
             
