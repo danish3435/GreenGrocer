@@ -5,23 +5,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header aria-label="Main header">
         <div class="container nav-row">
-            <a class="brand" href="index.html"><div class="logo">GG</div>GreenGrocer</a>
+            <a class="brand" href="index.html">
+                <div class="logo">GG</div>
+                <div>
+                    <div style="font-size:15px">GreenGrocer</div>
+                    <div style="font-size:12px;color:var(--muted);margin-top:2px">Discount essentials</div>
+                </div>
+            </a>
+            
+            <div class="menu-trigger" id="menuTrigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> 
+        
             <nav class="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="promotions.html" class="active">Promotions</a></li>
                     <li><a href="stores.html">Stores</a></li>
-					<li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a class="cta" href="shop now.html">Shop Now <span id="cart-count"></span></a></li>
                 </ul>
             </nav>
         </div>
+        
+        <div id="mobileMenu" class="mobile-menu-overlay">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="promotions.html">Promotions</a>
+            <a href="stores.html">Stores</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="shop now.html" class="cta-mobile">Shop Now <span id="cart-count-mobile"></span></a>
+        </div>
     </header>
-    
+
     <main class="container">
         <div class="promo-banner" style="background: #e8f5e9; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px dashed #28a745; text-align: center;">
             <h3 style="color: #28a745; margin: 0;">🔥 Weekend Super Saver 🔥</h3>
@@ -114,8 +137,8 @@
                 <div class="qty-container"><input type="number" class="qty-input" value="1" min="1"></div>
                 <button class="add-btn">Add to Cart</button>
             </div>
-			
-			<div class="card" data-category="groceries">
+            
+            <div class="card" data-category="groceries">
                 <span class="discount-badge">-30%</span>
                 <img src="promo/carbonara.png" alt="Oats">
                 <h4>Carbonara Sauce in Tin 280g</h4>
@@ -130,46 +153,46 @@
     </main>
 
     <footer>
-    <div class="container footer-content">
-        <div class="footer-column brand-col">
-            <div class="brand-row">
-                <div class="logo">GG</div>
-                <div>
-                    <span class="footer-brand-name">GreenGrocer</span><br>
-                    <small class="tagline">Affordable essentials • Discount prices</small>
+        <div class="container footer-content">
+            <div class="footer-column brand-col">
+                <div class="brand-row">
+                    <div class="logo">GG</div>
+                    <div>
+                        <span class="footer-brand-name">GreenGrocer</span><br>
+                        <small class="tagline">Affordable essentials • Discount prices</small>
+                    </div>
                 </div>
+                <p class="footer-desc">
+                    GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
+                </p>
             </div>
-            <p class="footer-desc">
-                GreenGrocer — designed for fast, accessible shopping for everyday supplies. 
-            </p>
+    
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                <li><a href="products.html">Products</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="stores.html">Our Stores</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>support@greengrocer.</p>
+                <p>+60 13-9114556</p>
+                <p>+60 11-59509882</p>
+                <p>+60 17-5639458</p>
+            </div>
         </div>
-
-        <div class="footer-column">
-			<h4>Quick Links</h4>
-			<ul class="footer-links">
-			<li><a href="products.html">Products</a></li>
-			<li><a href="promotions.html">Promotions</a></li>
-			<li><a href="stores.html">Our Stores</a></li>
-			<li><a href="about.html">About Us</a></li>
-			<li><a href="contact.html">Contact Us</a></li>
-			</ul>
-		</div>
-
-        <div class="footer-column">
-            <h4>Contact</h4>
-            <p>support@greengrocer.</p>
-            <p>+60 13-9114556</p>
-			<p>+60 11-59509882</p>
-			<p>+60 17-5639458</p>
+    
+        <div class="footer-bottom">
+            <div class="container">
+                © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
+            </div>
         </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container">
-            © <span id="year">2026</span> GreenGrocer. All Rights Reserved.
-        </div>
-    </div>
-</footer>
+    </footer>
     <script src="javascript.js"></script>
 </body>
 </html>

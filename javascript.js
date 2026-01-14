@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. ELEMENT SELECTIONS ---
+    // --- ELEMENT SELECTIONS ---
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
     const categoryFilter = document.getElementById('categoryFilter');
@@ -10,91 +10,142 @@ document.addEventListener('DOMContentLoaded', () => {
     const grandTotalEl = document.getElementById('grandTotal');
     const payBtn = document.getElementById('payBtn');
 
-	// --- 8. ENHANCED HERO CAROUSEL LOGIC ---
-	const slides = document.getElementById('slides');
-	const dotsContainer = document.getElementById('dots');
-	const prevBtn = document.getElementById('prevBtn');
-	const nextBtn = document.getElementById('nextBtn');
-	const allSlides = document.querySelectorAll('.slide');
-
-	let currentIndex = 0;
-	const slideCount = allSlides.length;
-	let autoPlayInterval;
-
-	if (slides && dotsContainer) {
-    // 1. Create dots
-    allSlides.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-    });
-
-    const updateDots = () => {
-        const allDots = document.querySelectorAll('.dot');
-        allDots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
-    };
-
-    const goToSlide = (index) => {
-        currentIndex = index;
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        updateDots();
-    };
-
-    const moveNext = () => {
-        currentIndex = (currentIndex + 1) % slideCount;
-        goToSlide(currentIndex);
-    };
-
-    const movePrev = () => {
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        goToSlide(currentIndex);
-    };
-
-    // 2. Button Listeners
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-        stopAutoPlay();
-        moveNext();
-        startAutoPlay();
-    });
-
-    if (prevBtn) prevBtn.addEventListener('click', () => {
-        stopAutoPlay();
-        movePrev();
-        startAutoPlay();
-    });
-
-    // 3. Auto-play Logic
-    const startAutoPlay = () => {
-        autoPlayInterval = setInterval(moveNext, 5000);
-    };
-
-    const stopAutoPlay = () => clearInterval(autoPlayInterval);
-
-    startAutoPlay();
-
-    // Pause on hover
-    slides.parentElement.addEventListener('mouseenter', stopAutoPlay);
-    slides.parentElement.addEventListener('mouseleave', startAutoPlay);
-}
-	
-    // INITIALIZE BADGE ON PAGE LOAD
-    updateCartBadge();
-
-    // --- MOBILE MENU TOGGLE ---
+    // --- HAMBURGER MENU TOGGLE ---
     const trigger = document.getElementById('menuTrigger');
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (trigger && mobileMenu) {
         trigger.addEventListener('click', () => {
-            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+            // Toggle the hamburger animation
+            trigger.classList.toggle('active');
+            
+            // Toggle the mobile menu visibility
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                trigger.classList.remove('active');
+                mobileMenu.classList.remove('show');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!trigger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                trigger.classList.remove('active');
+                mobileMenu.classList.remove('show');
+            }
         });
     }
 
-    // --- 2. SEARCH & FILTER LOGIC ---
+    // --- CAROUSEL LOGIC ---
+    const slides = document.getElementById('slides');
+    const dotsContainer = document.getElementById('dots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const allSlides = document.querySelectorAll('.slide');
+
+    let currentIndex = 0;
+    const slideCount = allSlides.length;
+    let autoPlayInterval;
+
+    if (slides && dotsContainer && slideCount > 0) {
+        // Create dots
+        allSlides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const updateDots = () => {
+            const allDots = document.querySelectorAll('.dot');
+            allDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        };
+
+        const goToSlide = (index) => {
+            currentIndex = index;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+        };
+
+        const moveNext = () => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            goToSlide(currentIndex);
+        };
+
+        const movePrev = () => {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            goToSlide(currentIndex);
+        };
+
+        // Button Listeners
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+            stopAutoPlay();
+            moveNext();
+            startAutoPlay();
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', () => {
+            stopAutoPlay();
+            movePrev();
+            startAutoPlay();
+        });
+
+        // Auto-play Logic
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(moveNext, 5000);
+        };
+
+        const stopAutoPlay = () => clearInterval(autoPlayInterval);
+
+        startAutoPlay();
+
+        // Pause on hover
+        if (slides.parentElement) {
+            slides.parentElement.addEventListener('mouseenter', stopAutoPlay);
+            slides.parentElement.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slides.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        slides.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        const handleSwipe = () => {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left
+                stopAutoPlay();
+                moveNext();
+                startAutoPlay();
+            }
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right
+                stopAutoPlay();
+                movePrev();
+                startAutoPlay();
+            }
+        };
+    }
+    
+    // INITIALIZE BADGE ON PAGE LOAD
+    updateCartBadge();
+
+    // --- SEARCH & FILTER LOGIC ---
     function filterProducts() {
         if (!searchInput || !categoryFilter) return; 
 
@@ -116,12 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBtn) searchBtn.addEventListener('click', filterProducts);
     if (categoryFilter) categoryFilter.addEventListener('change', filterProducts);
 
-    // --- 7. REFINED COUNTING ANIMATION ---
+    // --- COUNTING ANIMATION ---
     const counters = document.querySelectorAll('.counter');
     
     const runCounter = (el) => {
         const target = +el.getAttribute('data-target');
-        const speed = 100; // Adjusted for smoother flow
+        const speed = 100;
         let current = 0;
         
         const increment = target / speed;
@@ -143,14 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 runCounter(entry.target);
-                observer.unobserve(entry.target); // Only run once
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.2 }); // Trigger when 20% visible
+    }, { threshold: 0.2 });
 
     counters.forEach(c => observer.observe(c));
 
-    // --- 3. ADD TO CART LOGIC (With Automatic Merging) ---
+    // --- ADD TO CART LOGIC ---
     const allAddBtns = document.querySelectorAll('.add-btn');
     allAddBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -182,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 4. RENDER CART (With Plus/Minus and Remove Controls) ---
+    // --- RENDER CART ---
     if (cartItemsList) { renderCart(); }
 
     function renderCart() {
@@ -289,21 +340,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 5. PAYMENT & RECEIPT ---
+    // --- PAYMENT & RECEIPT ---
     if (payBtn) {
         payBtn.addEventListener('click', () => {
-            const isDelivery = confirm("📦 Order Preference:\n\nClick OK for Home Delivery (+RM 5.00 fee)\nClick Cancel for Store Pickup (Free)");
+            const cart = JSON.parse(localStorage.getItem('gg_cart')) || [];
+            if (cart.length === 0) return alert("Cart is empty!");
+
+            const isDelivery = confirm("📦 Order Preference:\n\nClick OK for Delivery (+RM 5.00)\nClick Cancel for Pickup (Free)");
             const deliveryFee = isDelivery ? 5.0 : 0.0;
             const method = isDelivery ? "Home Delivery" : "Store Pickup";
-            const cart = JSON.parse(localStorage.getItem('gg_cart')) || [];
-            if (cart.length === 0) return alert("Your cart is empty!");
+            
+            // Update receipt items
+            const receiptItems = document.getElementById('receiptItems');
+            if (receiptItems) {
+                receiptItems.innerHTML = '';
+                
+                cart.forEach(item => {
+                    const row = document.createElement('div');
+                    row.style = "display:flex; justify-content:space-between; margin-bottom:8px;";
+                    row.innerHTML = `
+                        <span>${item.quantity}x ${item.name}</span>
+                        <span>RM ${(item.price * item.quantity).toFixed(2)}</span>
+                    `;
+                    receiptItems.appendChild(row);
+                });
+            }
 
+            // Update receipt details
             document.getElementById('receiptRef').textContent = "GG-" + Math.floor(1000 + Math.random() * 9000);
             document.getElementById('receiptMethod').textContent = method;
             const currentTotal = parseFloat(grandTotalEl.textContent.replace('RM ', ''));
             document.getElementById('receiptTotal').textContent = `RM ${(currentTotal + deliveryFee).toFixed(2)}`;
+            
+            // Show receipt
             document.getElementById('cartContent').style.display = 'none';
             document.getElementById('receiptSection').style.display = 'block';
+            
             localStorage.removeItem('gg_cart');
             updateCartBadge(); 
         });
@@ -315,12 +387,26 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCartBadge() {
         const cart = JSON.parse(localStorage.getItem('gg_cart')) || [];
         const badge = document.getElementById('cart-count');
+        const badgeMobile = document.getElementById('cart-count-mobile');
+        
+        const totalItems = cart.reduce((t, i) => t + (i.quantity || 1), 0);
+        
         if (badge) {
-            const totalItems = cart.reduce((t, i) => t + (i.quantity || 1), 0);
             if (totalItems > 0) {
                 badge.textContent = `(${totalItems})`;
                 badge.style.display = 'inline-block';
-            } else { badge.style.display = 'none'; }
+            } else { 
+                badge.style.display = 'none'; 
+            }
+        }
+        
+        if (badgeMobile) {
+            if (totalItems > 0) {
+                badgeMobile.textContent = `(${totalItems})`;
+                badgeMobile.style.display = 'inline-block';
+            } else { 
+                badgeMobile.style.display = 'none'; 
+            }
         }
     }
 });
@@ -328,43 +414,4 @@ document.addEventListener('DOMContentLoaded', () => {
 function clearCart() {
     localStorage.removeItem('gg_cart');
     location.reload();
-}
-
-// --- 5. UPDATED PAYMENT & RECEIPT LOGIC ---
-if (payBtn) {
-    payBtn.addEventListener('click', () => {
-        const cart = JSON.parse(localStorage.getItem('gg_cart')) || [];
-        if (cart.length === 0) return alert("Cart is empty!");
-
-        const isDelivery = confirm("📦 Order Preference:\n\nClick OK for Delivery (+RM 5.00)\nClick Cancel for Pickup (Free)");
-        const deliveryFee = isDelivery ? 5.0 : 0.0;
-        
-        // TARGET THE RECEIPT LIST
-        const receiptItems = document.getElementById('receiptItems');
-        if (receiptItems) {
-            receiptItems.innerHTML = ''; // Clear old data
-            
-            // THIS IS THE FIX: Loop and add each item name and price
-            cart.forEach(item => {
-                const row = document.createElement('div');
-                row.style = "display:flex; justify-content:space-between; margin-bottom:8px;";
-                row.innerHTML = `
-                    <span>${item.quantity}x ${item.name}</span>
-                    <span>RM ${(item.price * item.quantity).toFixed(2)}</span>
-                `;
-                receiptItems.appendChild(row);
-            });
-        }
-
-        // Update Totals
-        const currentTotal = parseFloat(grandTotalEl.textContent.replace('RM ', ''));
-        document.getElementById('receiptTotal').textContent = `RM ${(currentTotal + deliveryFee).toFixed(2)}`;
-        
-        // Show the receipt section
-        document.getElementById('cartContent').style.display = 'none';
-        document.getElementById('receiptSection').style.display = 'block';
-        
-        localStorage.removeItem('gg_cart');
-        updateCartBadge(); 
-    });
 }
